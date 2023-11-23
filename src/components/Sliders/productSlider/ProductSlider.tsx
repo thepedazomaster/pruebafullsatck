@@ -16,6 +16,7 @@ function ProductSlider({ title, products }: Props) {
     <article className={`${styles.container}`}>
       <h2 className={`${styles.title}`}>{title}</h2>
       <Slider
+        centerMode
         dots={false}
         infinite
         speed={500}
