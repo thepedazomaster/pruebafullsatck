@@ -154,6 +154,8 @@ export async function PUT(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
+    console.log(error);
+
     return NextResponse.json(
       { message: "Error en el servidor" },
       { status: 500 }
