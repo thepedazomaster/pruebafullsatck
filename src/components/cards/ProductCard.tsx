@@ -3,8 +3,10 @@ import { Rate } from "antd";
 import Image from "next/image";
 import styles from "./ProductCard.module.css";
 import { Cabin } from "next/font/google";
+import Link from "antd/es/typography/Link";
 
 interface Props {
+  id: number;
   name: string;
   image: string;
   reduction: number;
@@ -17,6 +19,7 @@ interface Props {
 const cabinFont = Cabin({ weight: "400", style: "normal", preload: false });
 
 function ProductCard({
+  id,
   name,
   image,
   reduction,
@@ -27,7 +30,10 @@ function ProductCard({
   subTotal,
 }: Props) {
   return (
-    <article className={`${styles.cardContainer} ${cabinFont.className}`}>
+    <Link
+      href={`/product/${id}`}
+      className={`${styles.cardContainer} ${cabinFont.className}`}
+    >
       <div className={`${styles.AditionalContainer}`}>
         <div className={`${styles.reductionContainer}`}>{reduction}%</div>
         {favorite ? <HeartFilled /> : <HeartOutlined />}
@@ -64,7 +70,7 @@ function ProductCard({
           </b>
         </p>
       </div>
-    </article>
+    </Link>
   );
 }
 
