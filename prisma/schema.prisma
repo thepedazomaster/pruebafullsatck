@@ -19,6 +19,7 @@ model user{
   updateat DateTime @updatedAt @default(now())
   person person?
   userProducts user_product[]
+  sold sold[]
 }
 model person{
   id  Int @id @default(autoincrement())
@@ -31,7 +32,7 @@ model person{
 }
 model product{
   id Int @id @default(autoincrement())
-  name String
+  name String @unique
   description String? @db.Text
   price Float
   availableQuantity Int
@@ -41,6 +42,7 @@ model product{
   productType product_type @relation(fields: [idProductType], references: [id], onDelete: Cascade, onUpdate: Cascade)
   images image_product[]
   userProducts user_product[]
+  oders order[]
 }
 model product_type{
   id Int @id @default(autoincrement())
@@ -56,32 +58,36 @@ model image_product{
 }
 model user_product{
   id Int @id @default(autoincrement())
-  favorite Boolean
-  rate Int? 
-  comment String
+  favorite Boolean @default(false)
+  rate Int @default(0)
+  comment String?
   idUser Int
   idProduct Int
   user user  @relation(fields: [idUser], references: [id])
   product product @relation(fields: [idProduct], references: [id])
-  oders order[]
+  
+  @@unique([idUser,idProduct])
 }
 model order{
   id String @id @default(uuid())
-  idUserProduct Int
+  idProduct Int
   quantity Int
   reduction Int 
   idSold String 
   status Boolean  @default(true)
   sold sold @relation(fields: [idSold], references: [id])
-  userProduct user_product @relation(fields: [idUserProduct], references: [id])
+  product product @relation(fields: [idProduct], references: [id])
 
 }
 model sold{
   id String @id @default(uuid())
   status Boolean  @default(true)
   idPaymentMethod Int
+  idUser Int
+  soldStatus String  @default("PENDING")
   paymentMethod payment_method @relation(fields: [idPaymentMethod], references: [id])
   orders order[]
+  user user @relation(fields: [idUser], references: [id])
 }
 model payment_method{
   id Int @id @default(autoincrement())

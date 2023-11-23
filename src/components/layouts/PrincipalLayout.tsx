@@ -121,7 +121,7 @@ const arimoFont = Arimo({ weight: "400", style: "normal", preload: false });
 const cabinFont = Cabin({ weight: "400", style: "normal", preload: false });
 function PrincipalLayout({ children }: { children: React.ReactNode }) {
   const { data } = useSession();
-  const [windowSize, setWindowSize] = useState([
+  /*   const [windowSize, setWindowSize] = useState([
     window.innerWidth,
     window.innerHeight,
   ]);
@@ -136,7 +136,7 @@ function PrincipalLayout({ children }: { children: React.ReactNode }) {
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
-  }, []);
+  }, []); */
 
   return (
     <Layout>

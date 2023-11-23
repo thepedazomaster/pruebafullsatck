@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     //svgRate and subTotal
     for (const product of products) {
       const svgRateProduct = await prisma.user_product.aggregate({
-        where: { product: { id: product.id }, NOT: { rate: null } },
+        where: { product: { id: product.id }, NOT: { rate: 0 } },
         _avg: { rate: true },
         _count: { rate: true },
       });

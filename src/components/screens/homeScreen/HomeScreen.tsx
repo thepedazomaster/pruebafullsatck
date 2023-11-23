@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -18,6 +18,12 @@ interface Props {
 }
 
 function HomeScreen({ products }: Props) {
+  const [glasses, setGlasses] = useState(
+    products.filter((product) => product.idProductType === 2)
+  );
+  const [clocks, setClocks] = useState(
+    products.filter((product) => product.idProductType === 1)
+  );
   return (
     <article className={`${styles.containerScreen}`}>
       <section>
@@ -142,7 +148,7 @@ function HomeScreen({ products }: Props) {
           <b>Ver mas</b>
         </button>
       </section>
-      <ProductSlider title="¡EL MEJOR PRECIO!" products={products} />
+      <ProductSlider title="¡EL MEJOR PRECIO!" products={clocks} />
       <section className={`${cabinFont.className}`}>
         <Image
           alt="prom"
@@ -156,7 +162,7 @@ function HomeScreen({ products }: Props) {
           <b>Ver mas</b>
         </button>
       </section>
-      <ProductSlider title="¡GAFAS DE SOL!" products={products} />
+      <ProductSlider title="¡GAFAS DE SOL!" products={glasses} />
       <section className={`flex flex-col items-center`}>
         <h2 className={`${cabinFont.className} text-lg `}>
           {" "}
