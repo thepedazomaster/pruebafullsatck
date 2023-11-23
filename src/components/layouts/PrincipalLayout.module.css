@@ -1,0 +1,176 @@
+.blackDaysNav {
+  @apply bg-red-500 px-2;
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+.headerTopContainer {
+  height: 30px;
+  @apply flex justify-end items-center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+.headerTopContainer a {
+  color: black;
+}
+.headerTopContainer > div {
+  margin: 5px;
+}
+
+.headerFooterContainer {
+  @apply flex w-full items-center;
+  overflow: hidden;
+  position: relative;
+  height: 40px;
+}
+.headerFooterContainer > span {
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  margin: 0;
+  position: absolute;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+.headerFooterContainer > span div {
+  display: inline;
+  @apply mx-3;
+}
+.headerFooterContainer > span div span {
+  @apply mx-1;
+  font-weight: bold;
+}
+.containerHeader {
+  padding: 0;
+  position: "relative";
+  height: auto;
+  background-color: #fff200;
+}
+.containerNav {
+  @apply bg-black text-white flex items-center w-full;
+  padding: 0 25px;
+}
+.logo {
+  width: 175px;
+  height: auto;
+}
+.verefy {
+  width: 50px;
+  height: auto;
+}
+.itemsNav {
+  width: 65%;
+  @apply flex;
+}
+.iconsContainer {
+  width: 135px;
+  @apply flex;
+}
+.iconsNav {
+  font-size: 25px;
+  margin: 0 10px;
+}
+
+.containerFooter {
+  @apply bg-black text-white text-center flex flex-col;
+  padding: 0;
+}
+.topFooter h2 {
+  font-size: 2.12em;
+  letter-spacing: 0.1em;
+  margin: 20px;
+}
+.topFooter > div {
+  border-top-width: 3px;
+  border-bottom-width: 3px;
+  border-color: #fff200;
+  padding: 10px;
+  width: 100%;
+  max-width: 526px;
+  margin: 0 auto;
+}
+
+.formFooterContainer {
+  max-width: 700px;
+  width: 100%;
+  padding: 10px;
+  margin: 30px auto;
+  text-align: start;
+}
+.footerEmailInput {
+  height: 50px;
+  width: 100%;
+  max-width: 550px;
+}
+.formFooterContainer button {
+  height: 50px;
+  background-color: #fff200;
+  width: 100%;
+  max-width: 120px;
+  color: black;
+}
+.formFooterContainer button {
+  height: 50px;
+  background-color: #fff200;
+  width: 100%;
+  max-width: 120px;
+  color: black;
+}
+.formFooterContainer > div {
+  @apply flex justify-evenly flex-wrap;
+  width: 100%;
+  max-width: 700px;
+  margin: 30px 15px 0 0;
+}
+.redIconsContainer {
+  background-color: white;
+  color: black;
+  height: 151px;
+  width: 100%;
+  @apply flex flex-col items-center justify-center;
+}
+.iconsRed {
+  font-size: 25px;
+}
+.iconsRed span {
+  margin: 10px;
+}
+
+.footerBottomContainer {
+  @apply flex flex-wrap justify-center;
+  width: 100%;
+  max-width: 1061px;
+  margin: 75px auto;
+}
+.footerBottomImages {
+  @apply flex justify-center;
+  margin-bottom: 30px;
+}
+.footerBottomImages img {
+  width: 300px;
+  height: auto;
+}
+.footerBottomContainer a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  @apply hover:text-yellow-300;
+}
+.containerMain {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+@keyframes marquee {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}

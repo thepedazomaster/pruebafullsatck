@@ -1,0 +1,34 @@
+.cardContainer {
+  @apply bg-zinc-100 flex flex-col rounded-lg justify-around;
+  border: solid 1px #e7e7e7;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  margin: 15px;
+  width: 220px;
+  height: 380px;
+}
+.cardContainer img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 15px 0;
+  filter: brightness(1, 1);
+  mix-blend-mode: multiply;
+}
+.rateContainer {
+  @apply flex flex-wrap w-full justify-center;
+}
+.pricesContainer {
+  @apply flex flex-wrap w-full justify-evenly;
+}
+.AditionalContainer {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 15px;
+}
+.reductionContainer {
+  @apply bg-red-500 flex justify-center items-center rounded-lg text-white;
+  padding: 8px 12px;
+}

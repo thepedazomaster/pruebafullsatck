@@ -1,0 +1,33 @@
+.PrincipalCarrouselImage {
+  width: 100%;
+}
+.containerScreen {
+  @apply flex flex-col  w-full;
+}
+.titleSection {
+  font-size: 32px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.sectionWarranty {
+  @apply flex flex-wrap justify-around border-zinc-300;
+  margin: 20px auto;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+}
+.sectionWarranty img {
+  object-fit: scale-down;
+  max-width: 250px;
+  height: auto;
+}
+.sectionPromo {
+  @apply flex flex-wrap justify-center my-20;
+}
+.sectionPromo img {
+  margin: 15px;
+  width: 47%;
+  min-width: 330px;
+  height: auto;
+}

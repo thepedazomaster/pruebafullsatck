@@ -1,0 +1,90 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user{
+  id Int @id @default(autoincrement())
+  email String @unique
+  password String
+  status Boolean  @default(true)
+  createat DateTime @default(now()) 
+  updateat DateTime @updatedAt @default(now())
+  person person?
+  userProducts user_product[]
+}
+model person{
+  id  Int @id @default(autoincrement())
+  name String
+  lastname String
+  address String
+  cel String
+  idUser Int @unique
+  user user @relation(fields: [idUser], references: [id], onDelete: Cascade, onUpdate: Cascade)  
+}
+model product{
+  id Int @id @default(autoincrement())
+  name String
+  description String? @db.Text
+  price Float
+  availableQuantity Int
+  reduction Int 
+  status Boolean @default(true)
+  idProductType Int
+  productType product_type @relation(fields: [idProductType], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  images image_product[]
+  userProducts user_product[]
+}
+model product_type{
+  id Int @id @default(autoincrement())
+  name String
+  products product[]
+}
+model image_product{
+  id Int @id @default(autoincrement())
+  url String
+  idProduct Int
+  product product @relation(fields: [idProduct], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+}
+model user_product{
+  id Int @id @default(autoincrement())
+  favorite Boolean
+  rate Int? 
+  comment String
+  idUser Int
+  idProduct Int
+  user user  @relation(fields: [idUser], references: [id])
+  product product @relation(fields: [idProduct], references: [id])
+  oders order[]
+}
+model order{
+  id String @id @default(uuid())
+  idUserProduct Int
+  quantity Int
+  reduction Int 
+  idSold String 
+  status Boolean  @default(true)
+  sold sold @relation(fields: [idSold], references: [id])
+  userProduct user_product @relation(fields: [idUserProduct], references: [id])
+
+}
+model sold{
+  id String @id @default(uuid())
+  status Boolean  @default(true)
+  idPaymentMethod Int
+  paymentMethod payment_method @relation(fields: [idPaymentMethod], references: [id])
+  orders order[]
+}
+model payment_method{
+  id Int @id @default(autoincrement())
+  name String
+  solds sold[]
+}

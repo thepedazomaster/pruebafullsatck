@@ -1,0 +1,18 @@
+.container {
+  @apply w-full flex flex-col;
+  padding: 55px 15px;
+}
+.title {
+  @apply w-full text-white;
+  background-color: black;
+  padding: 3px;
+  font-size: 18px;
+  text-align: center;
+}
+.buttonMore {
+  padding: 15px;
+  background-color: #feee00;
+  color: black;
+  @apply hover:bg-green-400 hover:text-white;
+  margin: 5px auto;
+}
