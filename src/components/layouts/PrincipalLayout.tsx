@@ -21,6 +21,7 @@ import {
 } from "@ant-design/icons";
 import { Arimo, Cabin } from "next/font/google";
 import { signIn, useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 
 const itemsFooter = [
   { key: "nosotros", label: "Nosotros", src: "#" },
@@ -120,6 +121,23 @@ const arimoFont = Arimo({ weight: "400", style: "normal", preload: false });
 const cabinFont = Cabin({ weight: "400", style: "normal", preload: false });
 function PrincipalLayout({ children }: { children: React.ReactNode }) {
   const { data } = useSession();
+  const [windowSize, setWindowSize] = useState([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize([window.innerWidth, window.innerHeight]);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   return (
     <Layout>
       <Header className={`${styles.containerHeader} ${arimoFont.className}`}>

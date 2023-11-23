@@ -52,7 +52,7 @@
   background-color: #fff200;
 }
 .containerNav {
-  @apply bg-black text-white flex items-center w-full flex-wrap;
+  @apply bg-black text-white flex items-center w-full flex-wrap justify-center;
   padding: 0 25px;
 }
 .logo {
