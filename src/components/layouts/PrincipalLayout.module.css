@@ -166,8 +166,8 @@
   padding: 0;
   margin: 0;
   min-height: 100vh;
-  max-width: 1600;
-  @apply flex flex-col items-center;
+  max-width: 1600px;
+  @apply flex flex-col items-center w-full;
 }
 
 @keyframes marquee {
