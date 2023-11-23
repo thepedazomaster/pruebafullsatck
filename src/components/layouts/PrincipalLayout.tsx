@@ -124,7 +124,7 @@ function PrincipalLayout({ children }: { children: React.ReactNode }) {
     <Layout>
       <Header className={`${styles.containerHeader} ${arimoFont.className}`}>
         <section className={`${styles.headerTopContainer}`}>
-          <div>
+          <div className="">
             <CarOutlined />
             <Link href={"#"}>Envíos a toda Colombia</Link>
           </div>
@@ -170,7 +170,6 @@ function PrincipalLayout({ children }: { children: React.ReactNode }) {
             width={50}
             height={77}
           />
-          <div className="flex shrink grow" />
 
           <nav className={`${styles.itemsNav}`}>
             <div className="flex flex-col min-w-0 shrink">

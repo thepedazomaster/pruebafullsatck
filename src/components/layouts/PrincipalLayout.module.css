@@ -4,7 +4,7 @@
 }
 .headerTopContainer {
   height: 30px;
-  @apply flex justify-end items-center;
+  @apply md:text-sm text-xs flex justify-end items-center;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
@@ -15,6 +15,7 @@
 }
 .headerTopContainer > div {
   margin: 5px;
+  @apply text-center;
 }
 
 .headerFooterContainer {
@@ -51,15 +52,15 @@
   background-color: #fff200;
 }
 .containerNav {
-  @apply bg-black text-white flex items-center w-full;
+  @apply bg-black text-white flex items-center w-full flex-wrap;
   padding: 0 25px;
 }
 .logo {
-  width: 175px;
+  max-width: 175px;
   height: auto;
 }
 .verefy {
-  width: 50px;
+  max-width: 50px;
   height: auto;
 }
 .itemsNav {
@@ -147,7 +148,7 @@
   margin: 75px auto;
 }
 .footerBottomImages {
-  @apply flex justify-center;
+  @apply flex justify-center flex-wrap;
   margin-bottom: 30px;
 }
 .footerBottomImages img {
