@@ -121,9 +121,9 @@ const arimoFont = Arimo({ weight: "400", style: "normal", preload: false });
 const cabinFont = Cabin({ weight: "400", style: "normal", preload: false });
 function PrincipalLayout({ children }: { children: React.ReactNode }) {
   const { data } = useSession();
-  /*   const [windowSize, setWindowSize] = useState([
-    window.innerWidth,
-    window.innerHeight,
+  const [windowSize, setWindowSize] = useState([
+    window.innerWidth ?? 1600,
+    window.innerHeight ?? 1600,
   ]);
 
   useEffect(() => {
@@ -136,12 +136,15 @@ function PrincipalLayout({ children }: { children: React.ReactNode }) {
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
-  }, []); */
+  }, []);
 
   return (
     <Layout>
       <Header className={`${styles.containerHeader} ${arimoFont.className}`}>
-        <section className={`${styles.headerTopContainer}`}>
+        <section
+          className={`${styles.headerTopContainer}`}
+          style={windowSize[0] <= 420 ? { justifyContent: "center" } : {}}
+        >
           <div className="">
             <CarOutlined />
             <Link href={"#"}>Envíos a toda Colombia</Link>
@@ -189,7 +192,10 @@ function PrincipalLayout({ children }: { children: React.ReactNode }) {
             height={77}
           />
 
-          <nav className={`${styles.itemsNav}`}>
+          <nav
+            className={`${styles.itemsNav}`}
+            style={windowSize[0] <= 720 ? { marginLeft: 0 } : {}}
+          >
             <div className="flex flex-col min-w-0 shrink w-full">
               <Menu
                 className="flex justify-center"
