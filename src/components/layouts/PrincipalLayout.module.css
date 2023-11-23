@@ -66,6 +66,7 @@
 .itemsNav {
   width: 65%;
   @apply flex;
+  margin-left: auto;
 }
 .iconsContainer {
   width: 135px;

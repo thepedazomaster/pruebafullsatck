@@ -172,7 +172,7 @@ function PrincipalLayout({ children }: { children: React.ReactNode }) {
           />
 
           <nav className={`${styles.itemsNav}`}>
-            <div className="flex flex-col min-w-0 shrink">
+            <div className="flex flex-col min-w-0 shrink w-full">
               <Menu
                 className="flex justify-center"
                 items={itemsNav}
