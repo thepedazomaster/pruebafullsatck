@@ -7,7 +7,12 @@ export async function GET(
 ) {
   const id = context.params.id;
   try {
-    const sold = await prisma.sold.findUnique({ where: { id } });
+    const sold = await prisma.sold.findUnique({
+      where: { id },
+      include: {
+        orders: { include: { product: { include: { images: true } } } },
+      },
+    });
     return NextResponse.json(
       { message: "Busqueda Correcta", sold },
       { status: 200 }

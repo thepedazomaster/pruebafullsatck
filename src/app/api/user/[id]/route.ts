@@ -7,7 +7,10 @@ export async function GET(
 ) {
   const id = parseInt(context.params.id);
   try {
-    const user = await prisma.user.findUnique({ where: { id } });
+    const user = await prisma.user.findUnique({
+      where: { id },
+      include: { userProducts: true },
+    });
     return NextResponse.json(
       { message: "Busqueda Correcta", user },
       { status: 200 }
