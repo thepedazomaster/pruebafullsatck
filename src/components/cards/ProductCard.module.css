@@ -1,5 +1,5 @@
 .cardContainer {
-  @apply bg-zinc-100 flex flex-col rounded-lg justify-around;
+  @apply bg-zinc-100 flex flex-col rounded-lg justify-around hover:text-zinc-500;
   border: solid 1px #e7e7e7;
   padding: 15px;
   text-align: center;
@@ -7,6 +7,7 @@
   margin: 15px;
   width: 220px;
   height: 380px;
+  color: black;
 }
 .cardContainer img {
   width: 100%;

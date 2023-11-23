@@ -3,7 +3,7 @@ import { Rate } from "antd";
 import Image from "next/image";
 import styles from "./ProductCard.module.css";
 import { Cabin } from "next/font/google";
-import Link from "antd/es/typography/Link";
+import Link from "next/link";
 
 interface Props {
   id: number;
