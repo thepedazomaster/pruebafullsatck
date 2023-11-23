@@ -139,8 +139,10 @@ function PrincipalLayout({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <Layout>
-      <Header className={`${styles.containerHeader} ${arimoFont.className}`}>
+    <Layout className="flex flex-col items-center">
+      <Header
+        className={`${styles.containerHeader} ${arimoFont.className} w-full`}
+      >
         <section
           className={`${styles.headerTopContainer}`}
           style={windowSize[0] <= 420 ? { justifyContent: "center" } : {}}
@@ -238,7 +240,7 @@ function PrincipalLayout({ children }: { children: React.ReactNode }) {
         </section>
       </Header>
       <Content className={`${styles.containerMain}`}>{children}</Content>
-      <Footer className={`${styles.containerFooter}`}>
+      <Footer className={`${styles.containerFooter} w-full`}>
         <article className={`${styles.topFooter}`}>
           <h2 className={`${cabinFont.className}`}>INVICTA AL DÍA</h2>
           <div className={`${arimoFont.className}`}>
