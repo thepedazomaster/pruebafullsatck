@@ -119,19 +119,19 @@ const menuStyle = {
 };
 const arimoFont = Arimo({ weight: "400", style: "normal", preload: false });
 const cabinFont = Cabin({ weight: "400", style: "normal", preload: false });
+
 function PrincipalLayout({ children }: { children: React.ReactNode }) {
   const { data } = useSession();
-  const [windowSize, setWindowSize] = useState([
-    window.innerWidth ?? 1600,
-    window.innerHeight ?? 1600,
-  ]);
+
+  const [windowSize, setWindowSize] = useState([1600, 1600]);
 
   useEffect(() => {
     const handleWindowResize = () => {
       setWindowSize([window.innerWidth, window.innerHeight]);
     };
-
-    window.addEventListener("resize", handleWindowResize);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", handleWindowResize);
+    }
 
     return () => {
       window.removeEventListener("resize", handleWindowResize);
