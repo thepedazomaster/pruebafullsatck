@@ -35,7 +35,7 @@ function HomeScreen({ products }: Props) {
           autoplay
           autoplaySpeed={3000}
         >
-          <figure className={`${styles.PrincipalCarrouselImage}`}>
+          <figure className={`${styles.PrincipalCarrouselImage} `}>
             <Image
               alt="offert"
               width={1600}
@@ -135,7 +135,7 @@ function HomeScreen({ products }: Props) {
         />
       </section>
       <ProductSlider title="¡RELOJES DESDE $299,900!" products={products} />
-      <section className={`${cabinFont.className}`}>
+      <section className={`${cabinFont.className} px-4`}>
         <Image
           alt="prom"
           src={
@@ -149,7 +149,7 @@ function HomeScreen({ products }: Props) {
         </button>
       </section>
       <ProductSlider title="¡EL MEJOR PRECIO!" products={clocks} />
-      <section className={`${cabinFont.className}`}>
+      <section className={`${cabinFont.className} px-4 `}>
         <Image
           alt="prom"
           src={
@@ -158,13 +158,13 @@ function HomeScreen({ products }: Props) {
           width={1600}
           height={200}
         />
-        <button className="bg-yellow-300 w-full p-1">
+        <button className="bg-yellow-300 w-full p-1 ">
           <b>Ver mas</b>
         </button>
       </section>
       <ProductSlider title="¡GAFAS DE SOL!" products={glasses} />
       <section className={`flex flex-col items-center`}>
-        <h2 className={`${cabinFont.className} text-lg `}>
+        <h2 className={`${cabinFont.className} text-lg text-center`}>
           {" "}
           DEJAMOS QUE SEAN LOS CLIENTES LOS QUE HABLEN POR NOSOTROS.
         </h2>
